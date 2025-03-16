@@ -70,6 +70,28 @@ document.getElementById('newRiskBtn').addEventListener('click', () => { // Added
     
 })
 
+// Task 5 Implementing Bulk Updates
+
+document.getElementById('increaseRiskBtn').addEventListener('click', () => {
+    const allRiskCards = document.querySelectorAll('.risk-cards');
+    const riskCardsArray = Array.from(allRiskCards);
+
+    riskCardsArray.forEach(card => {
+        const RiskCardRiskLevel = card.querySelector('p'); // Select the paragraph element that contains risk level
+        const riskLevelText = RiskCardRiskLevel.textContent; // Selecting the text content for risk levels
+
+        if (riskLevelText === 'Risk Level: Low') {
+            RiskCardRiskLevel.textContent = 'Risk Level: Medium'; // Update the text to Medium
+            card.style.backgroundColor = 'yellow'; // Change background color to yellow for medium risk cards
+        }
+        else if (riskLevelText === 'Risk Level: Medium') {
+            RiskCardRiskLevel.textContent = 'Risk Level: High'; // Update the text to High
+            card.style.backgroundColor = 'red'; // Change background color to red for high risk level cards
+        }
+    });
+});
+
+
 
 // Test Cases for Task 2
 
@@ -82,5 +104,9 @@ addRiskItem("Market Fluctuations", "High", "Finance"); // Adding a new risk item
 
 // Test Cases for Task 4 
 
-addRiskItem("Cybersecurity Threat", "High", "IT"); // Adding a new Risk Item
+addRiskItem("Cybersecurity Threat", "High", "IT"); // Adding a new risk Item
 addRiskItem("HR Compliance Issue", "Low", "Human Resources"); // Adding a new Risk item
+
+// Test Cases for Task 5
+
+addRiskItem("Employee Retention", "Low", "HR"); // Adding a new risk item
