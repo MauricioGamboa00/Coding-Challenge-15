@@ -63,5 +63,7 @@ document.getElementById('newRiskBtn').addEventListener('click', () => { // Added
 addRiskItem("Data Breach", "High", "IT"); // Adding a new risk item
 addRiskItem("Supply Chain Disruption", "Medium", "Operations"); // Adding a new risk item
 
-// Task 3 Removing Risk Items 
+// Test Cases for Task 3
+
+addRiskItem("Market Fluctuations", "High", "Finance"); // Adding a new risk item
 
