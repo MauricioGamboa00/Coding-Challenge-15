@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risk Management Dashboard</title>
+    </head>
+
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 10px;
+            background-color: rgb(209, 191, 163);
+        }
+        .risk-cards {
+            width: 900px;
+            height: 60px;
+            padding: 20px;
+            margin: 5px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        
+        
+
+       header {
+        text-align: center;
+       }
+
+       footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        height: 40;
+        width: 100%;
+        background-color: orange;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        border-radius: 5px;
+        
+       }
+
+       button {
+            margin: 5px;
+        }
+        
+
+
+
+
+       
+    
+    
+    
+        
+    </style>
+    
+    <body>
+        <header>
+            <h1>Risk Management Dashboard</h1>
+        </header>
+
+        <main>
+            <div id ="riskDashboard">
+                <!-- New Risk Items will be added here-->
+</div>
+
+<!-- Risk Inputs-->
+<div id="inputDiv">
+    <label>Risk Name:</label>
+    <input type="text" id="riskName"/>
+    Risk Level:
+    <input type="text" id="riskLevel"/>
+    Department:
+    <input type="text" id="department"/>
+</div>
+
+<!--Buttons for Risk Inputs-->
+<div>
+    <button id="newRiskBtn">Add New Risk</button>
+    <button id="increaseRiskBtn">Increase Risk Level</button>
+</div>
+</div>
+
+        
+        </main>
+
+        <footer>
+            <h2>MG 2025 Placeholder</h2>
+        </footer>
+
+        <script src="cc_15.js"></script>
+    </body>
+</html>
+    
+
