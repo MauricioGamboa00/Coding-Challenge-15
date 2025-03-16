@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function addRiskItem(riskName, riskLevel, department){
 
-    const divRiskDashboard = document.getElementById('riskDashboard')
+    const divRiskDashboard = document.getElementById('riskDashboard') // Selecting the risk dahsboard
 
     const riskCard = document.createElement('div'); // creating a new div element for risk cards
     riskCard.setAttribute('class','risk-cards'); // Setting the class of new risk cards 
@@ -48,10 +48,10 @@ function addRiskItem(riskName, riskLevel, department){
         riskCard.remove();
     });
 
-    riskCard.appendChild(heading); // appending the Heading
-    riskCard.appendChild(paragraph); // Appending the Paragraph
-    riskCard.appendChild(label); // Appending the Label
-    riskCard.appendChild(resolveButton); // Appending the resolve button
+    riskCard.appendChild(heading); // appending the Heading to risk card
+    riskCard.appendChild(paragraph); // Appending the Paragraph to risk card
+    riskCard.appendChild(label); // Appending the Label to risk card
+    riskCard.appendChild(resolveButton); // Appending the resolve button card
 
 
     riskDashboard.appendChild(riskCard); // Appending riskCard to riskDashboard
@@ -67,7 +67,8 @@ function addRiskItem(riskName, riskLevel, department){
     })
 }
 
-document.getElementById('newRiskBtn').addEventListener('click', () => { // Added an event listener to the new risk button
+// Event Listener for creating a new risk when new risk button is clicked
+document.getElementById('newRiskBtn').addEventListener('click', (event) => { // Added an event listener to the new risk button
     const riskNameInput = document.getElementById("riskName");
     const riskLevelInput = document.getElementById("riskLevel");
     const departmentInput = document.getElementById("department");
@@ -82,19 +83,19 @@ document.getElementById('newRiskBtn').addEventListener('click', () => { // Added
 
 // Task 5 Implementing Bulk Updates
 
-document.getElementById('increaseRiskBtn').addEventListener('click', () => {
-    const allRiskCards = document.querySelectorAll('.risk-cards');
-    const riskCardsArray = Array.from(allRiskCards);
+document.getElementById('increaseRiskBtn').addEventListener('click', (event) => {
+    const allRiskCards = document.querySelectorAll('.risk-cards'); // Select every risk card
+    const riskCardsArray = Array.from(allRiskCards); // Converting the nodelist to an array
 
     riskCardsArray.forEach(card => {
         const RiskCardRiskLevel = card.querySelector('p'); // Select the paragraph element that contains risk level
-        const riskLevelText = RiskCardRiskLevel.textContent; // Selecting the text content for risk levels
+        const riskLevelText = RiskCardRiskLevel.textContent.toLowerCase(); // Selecting the text content for risk levels
 
-        if (riskLevelText === 'Risk Level: Low') {
+        if (riskLevelText === 'risk level: low') {
             RiskCardRiskLevel.textContent = 'Risk Level: Medium'; // Update the text to Medium
             card.style.backgroundColor = 'yellow'; // Change background color to yellow for medium risk cards
         }
-        else if (riskLevelText === 'Risk Level: Medium') {
+        else if (riskLevelText === 'risk level: medium') {
             RiskCardRiskLevel.textContent = 'Risk Level: High'; // Update the text to High
             card.style.backgroundColor = 'red'; // Change background color to red for high risk level cards
         }
