@@ -1,2 +1,2 @@
-Coding Challenge 15
+# Coding Challenge 15
 My submission for Coding Challenge 15
