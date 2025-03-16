@@ -23,6 +23,19 @@ function addRiskItem(riskName, riskLevel, department){
     const label = document.createElement('label'); // Creating a label as the department name
     label.textContent = `Department: ${department}`;
 
+    // Task 4 Categorizing Risks by Level
+
+    let backgroundColor;
+    if (riskLevel.toLowerCase() === 'high') {
+        backgroundColor = 'red'; // High risk cards background color will be red
+    } else if (riskLevel.toLowerCase() === 'medium') {
+        backgroundColor = 'yellow'; // Medium risk cards background color will be yellow
+    } else if (riskLevel.toLowerCase() === 'low') {
+        backgroundColor = 'green'; // Low Risk cards background color will be green
+    }
+
+    riskCard.style.backgroundColor = backgroundColor; // Setting background color accorrding to the Risk Level
+
     // Creating Resolve Button for Task 3
 
     const resolveButton = document.createElement('button'); // Creating Resolve Button
@@ -67,3 +80,7 @@ addRiskItem("Supply Chain Disruption", "Medium", "Operations"); // Adding a new 
 
 addRiskItem("Market Fluctuations", "High", "Finance"); // Adding a new risk item
 
+// Test Cases for Task 4 
+
+addRiskItem("Cybersecurity Threat", "High", "IT"); // Adding a new Risk Item
+addRiskItem("HR Compliance Issue", "Low", "Human Resources"); // Adding a new Risk item
