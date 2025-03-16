@@ -25,6 +25,8 @@ function addRiskItem(riskName, riskLevel, department){
 
     // Task 4 Categorizing Risks by Level
 
+    // Setting the background colors for risk levels
+
     let backgroundColor;
     if (riskLevel.toLowerCase() === 'high') {
         backgroundColor = 'red'; // High risk cards background color will be red
@@ -69,9 +71,9 @@ function addRiskItem(riskName, riskLevel, department){
 
 // Event Listener for creating a new risk when new risk button is clicked
 document.getElementById('newRiskBtn').addEventListener('click', (event) => { // Added an event listener to the new risk button
-    const riskNameInput = document.getElementById("riskName");
-    const riskLevelInput = document.getElementById("riskLevel");
-    const departmentInput = document.getElementById("department");
+    const riskNameInput = document.getElementById("riskName"); // Selecting riskName
+    const riskLevelInput = document.getElementById("riskLevel"); // Selecting riskLevel
+    const departmentInput = document.getElementById("department"); // Selecting department
 
     const riskName = riskNameInput.value; // Returns input entered in Risk Name
     const riskLevel = riskLevelInput.value; // Returns input entered in Risk Level
@@ -89,7 +91,9 @@ document.getElementById('increaseRiskBtn').addEventListener('click', (event) => 
 
     riskCardsArray.forEach(card => {
         const RiskCardRiskLevel = card.querySelector('p'); // Select the paragraph element that contains risk level
-        const riskLevelText = RiskCardRiskLevel.textContent.toLowerCase(); // Selecting the text content for risk levels
+        const riskLevelText = RiskCardRiskLevel.textContent.toLowerCase(); // Selecting the text content for risk levels and making it not case sensitive
+
+        // If Statement for updating Risk Card background colors and risk level
 
         if (riskLevelText === 'risk level: low') {
             RiskCardRiskLevel.textContent = 'Risk Level: Medium'; // Update the text to Medium
