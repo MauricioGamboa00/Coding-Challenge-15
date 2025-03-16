@@ -43,7 +43,7 @@ function addRiskItem(riskName, riskLevel, department){
 
     // Creating Event Listener for Resolve Button so that it removes a risk card when the button is clicked and logs a message to the console
 
-    resolveButton.addEventListener('click', () => {
+    resolveButton.addEventListener('click', (event) => {
         console.log(riskName, "Risk Card Removed.")
         riskCard.remove();
     });
@@ -55,6 +55,16 @@ function addRiskItem(riskName, riskLevel, department){
 
 
     riskDashboard.appendChild(riskCard); // Appending riskCard to riskDashboard
+
+    // Task 6 Handling Event Propagation
+
+    // Adding Event Listener to risk cards so a console entry is created when a risk card is clicked
+
+    riskCard.addEventListener('click', (event) => {
+        console.log("Clicked on Risk Card:", riskName);
+
+        event.stopPropagation(); // Clicking Inside of a risk will not trigger events in the dashboard
+    })
 }
 
 document.getElementById('newRiskBtn').addEventListener('click', () => { // Added an event listener to the new risk button
