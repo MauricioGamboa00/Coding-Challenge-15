@@ -48,6 +48,8 @@ function addRiskItem(riskName, riskLevel, department){
     resolveButton.addEventListener('click', (event) => {
         console.log(riskName, "Risk Card Removed.")
         riskCard.remove();
+
+        event.stopPropagation(); // Added stop propagation so only risk card removed is logged to the console
     });
 
     riskCard.appendChild(heading); // appending the Heading to risk card
